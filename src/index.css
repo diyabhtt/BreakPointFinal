@@ -1,0 +1,239 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #4a4b90;
+  --card: #ffffff;
+  --card-foreground: #4a4b90;
+  --popover: #ffffff;
+  --popover-foreground: #4a4b90;
+  --primary: #8B5CF6;
+  --primary-foreground: #ffffff;
+  --secondary: #bbbceb;
+  --secondary-foreground: #4a4b90;
+  --muted: #e5e5f7;
+  --muted-foreground: #4a4b90;
+  --accent: #dcd6f7;
+  --accent-foreground: #4a4b90;
+  --destructive: #4a4b90;
+  --destructive-foreground: #ffffff;
+  --border: #e5e5f7;
+  --input: #e5e5f7;
+  --ring: #8B5CF6;
+  --radius: 0.5rem;
+  --arcade-primary: #8B5CF6;
+  --arcade-secondary: #bbbceb;
+  --arcade-accent: #dcd6f7;
+  --arcade-light: #ffffff;
+  --arcade-dark: #1A1F2C;
+  --arcade-neon: #4a4b90;
+}
+
+.dark {
+  --background: #1A1F2C;
+  --foreground: #dcd6f7;
+  --card: #4a4b90;
+  --card-foreground: #ffffff;
+  --popover: #4a4b90;
+  --popover-foreground: #ffffff;
+  --primary: #8B5CF6;
+  --primary-foreground: #ffffff;
+  --secondary: #4a4b90;
+  --secondary-foreground: #dcd6f7;
+  --muted: #4a4b90;
+  --muted-foreground: #dcd6f7;
+  --accent: #4a4b90;
+  --accent-foreground: #dcd6f7;
+  --destructive: #4a4b90;
+  --destructive-foreground: #ffffff;
+  --border: #4a4b90;
+  --input: #4a4b90;
+  --ring: #8B5CF6;
+}
+
+.btn-primary {
+  @apply bg-[#8B5CF6] text-white py-2 px-4 rounded-lg hover:bg-[#7c4ddf] transition-colors shadow-md;
+}
+
+.btn-secondary {
+  @apply bg-gradient-to-r from-[#bbbceb] to-[#dcd6f7] text-white py-2 px-4 rounded-lg hover:from-[#a9a8d0] hover:to-[#cfc3f0] transition-colors shadow-md;
+}
+
+.card-container {
+  @apply bg-white p-4 rounded-lg shadow-md border-2 border-[#e5e5f7];
+}
+
+.arcade-gradient {
+  background: linear-gradient(135deg, var(--arcade-primary), var(--arcade-accent));
+}
+
+.bg-arcade-primary {
+  background-color: var(--arcade-primary);
+}
+
+.bg-arcade-secondary {
+  background-color: var(--arcade-secondary);
+}
+
+.bg-arcade-accent {
+  background-color: var(--arcade-accent);
+}
+
+.bg-arcade-light {
+  background-color: var(--arcade-light);
+}
+
+.bg-arcade-dark {
+  background-color: var(--arcade-dark);
+}
+
+.bg-arcade-neon {
+  background-color: var(--arcade-neon);
+}
+
+.text-arcade-primary {
+  color: var(--arcade-primary);
+}
+
+.text-arcade-secondary {
+  color: var(--arcade-secondary);
+}
+
+.text-arcade-accent {
+  color: var(--arcade-accent);
+}
+
+.text-arcade-neon {
+  color: var(--arcade-neon);
+}
+
+.text-orange {
+  color: white; /* Ensure all orange text is now white */
+}
+
+.play-learn-escape {
+  @apply text-white; /* Change text color to white */
+}
+
+/* Chat bubbles */
+.chat-bubble-user {
+  @apply bg-[#8B5CF6] text-white p-3 rounded-lg rounded-tr-none shadow-md;
+}
+
+.chat-bubble-ai {
+  @apply bg-[#4a4b90] text-white p-3 rounded-lg rounded-tl-none shadow-md;
+}
+
+/* Health bar */
+.health-bar {
+  @apply h-3 bg-[#e5e5f7] rounded-full overflow-hidden shadow-inner;
+}
+
+.health-bar-fill {
+  @apply h-full bg-gradient-to-r from-[#8B5CF6] to-[#7c4ddf] transition-all duration-300;
+}
+
+/* Memory game */
+.memory-card {
+  @apply aspect-square flex items-center justify-center text-2xl bg-gradient-to-br from-[#8B5CF6]/10 to-[#8B5CF6]/30 border-2 border-[#8B5CF6] rounded-lg shadow-md cursor-pointer hover:border-[#7c4ddf] transition-colors;
+}
+
+.memory-card-matched {
+  @apply border-[#4a4b90] bg-gradient-to-br from-[#4a4b90]/10 to-[#4a4b90]/30;
+}
+
+.animate-pulse-gentle {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Typing indicator */
+.typing-dot {
+  @apply h-2 w-2 rounded-full bg-[#8B5CF6];
+  animation: typingAnimation 1.4s infinite both;
+}
+
+.typing-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typingAnimation {
+  0% {
+    opacity: 0.6;
+    transform: translateY(0px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-4px);
+  }
+  100% {
+    opacity: 0.6;
+    transform: translateY(0px);
+  }
+}
+
+.arcade-text {
+  @apply font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#8B5CF6] to-[#dcd6f7];
+}
+
+.arcade-card {
+  @apply bg-[#4a4b90] text-white rounded-lg border-2 border-[#8B5CF6] p-4 shadow-lg;
+}
+
+.neon-border {
+  box-shadow: 0 0 10px #8B5CF6, 0 0 20px #8B5CF6;
+}
+
+.arcade-button {
+  @apply bg-gradient-to-r from-[#8B5CF6] to-[#dcd6f7] text-white font-bold py-2 px-4 rounded-lg shadow-md hover:from-[#7c4ddf] hover:to-[#cfc3f0] transition-all;
+}
+
+/* Scenario Analysis Pop-up */
+.popup-container {
+  @apply fixed inset-0 flex items-center justify-center bg-black/50 z-50;
+}
+
+.popup {
+  @apply bg-white dark:bg-[#1A1F2C] text-[#4a4b90] dark:text-[#dcd6f7] rounded-lg shadow-lg p-6 max-w-lg w-full;
+}
+
+.popup-header {
+  @apply text-xl font-bold mb-4 text-[#8B5CF6];
+}
+
+.popup-content {
+  @apply text-sm leading-relaxed mb-4;
+}
+
+.popup-actions {
+  @apply flex justify-end gap-4;
+}
+
+.popup-button {
+  @apply py-2 px-4 rounded-lg font-medium transition-all duration-300;
+}
+
+.popup-button-close {
+  @apply bg-[#e5e5f7] text-[#4a4b90] hover:bg-[#dcd6f7];
+}
+
+.popup-button-analyze {
+  @apply bg-[#8B5CF6] text-white hover:bg-[#7c4ddf];
+}
